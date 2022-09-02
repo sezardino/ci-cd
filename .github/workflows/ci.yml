@@ -10,15 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Start Node.js
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
         with:
           node-version: 17
-      - name: install dependencies
-        run: npm ci
-      - name: lint code
-        run: npm run lint
-      - name: check format code
-        run: npm run prettier
-      - name: build project
-        run: npm run build
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run prettier
+      - run: npm run build
